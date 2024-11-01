@@ -18,11 +18,12 @@ function addFilm(e){
     const url = urlElement.value;
 
     if(title === "" || director === "" || url === ""){
-
+        ui.displayMessages("Fill in all fields","danger");
     }else{
         const newFilm = new Film(title,director,url);
 
         ui.addFilmToUI(newFilm);
+        ui.displayMessages("Movie added successfully","success");
     }
 
     ui.clearInputs(titleElement,urlElement,directorElement);
