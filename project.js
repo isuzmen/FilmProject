@@ -5,6 +5,8 @@ const urlElement = document.querySelector("#url");
 
 const ui = new UI();
 
+const storage = new Storage();
+
 eventListeners();
 
 function eventListeners(){
@@ -23,6 +25,7 @@ function addFilm(e){
         const newFilm = new Film(title,director,url);
 
         ui.addFilmToUI(newFilm);
+        storage.addFilmToStorage(newFilm);
         ui.displayMessages("Movie added successfully","success");
     }
 
