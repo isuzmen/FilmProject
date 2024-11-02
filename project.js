@@ -52,6 +52,9 @@ function deleteFilm(e){
 }
 
 function clearAllFilms(){
-    ui.clearAllFilmsFromUI();
-    storage.clearAllFilmToStorage();
+    if(confirm("Are you sure ?")){
+        ui.clearAllFilmsFromUI();
+        storage.clearAllFilmToStorage();
+    }
+    
 }
