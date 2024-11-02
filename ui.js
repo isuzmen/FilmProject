@@ -48,3 +48,7 @@ function UI(){
             `;
         });
     }
+
+    UI.prototype.deleteFilmFromUI = function(element){
+        element.parentElement.parentElement.remove();
+    }
