@@ -1,8 +1,6 @@
-function UI(){
-    
-}
+class UI {
 
-    UI.prototype.addFilmToUI = function(newFilm){
+    static addFilmToUI(newFilm){
         const filmList = document.getElementById("films");
         filmList.innerHTML += `
 
@@ -16,13 +14,13 @@ function UI(){
         `;
     }
 
-    UI.prototype.clearInputs = function(element1,element2,element3){
+    static clearInputs(element1,element2,element3){
         element1.value = "";
         element2.value = "";
         element3.value = "";
     }
 
-    UI.prototype.displayMessages = function(message,type){
+    static displayMessages(message,type){
         const cardBody = document.querySelectorAll(".card-body")[0];
         
         const div = document.createElement("div");
@@ -35,7 +33,7 @@ function UI(){
         },1000)
     }
 
-    UI.prototype.loadAllFilms = function(films){
+    static loadAllFilms(films){
         const filmList = document.getElementById("films");
         films.forEach(function(film){
             filmList.innerHTML += `
@@ -49,13 +47,17 @@ function UI(){
         });
     }
 
-    UI.prototype.deleteFilmFromUI = function(element){
+    static deleteFilmFromUI(element){
         element.parentElement.parentElement.remove();
     }
 
-    UI.prototype.clearAllFilmsFromUI = function(){
+    static clearAllFilmsFromUI(){
         const filmList = document.getElementById("films");
         while(filmList.firstElementChild !== null){
             filmList.firstElementChild.remove();
         }
     }
+
+}
+
+    
